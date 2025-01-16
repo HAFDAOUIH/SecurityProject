@@ -1,0 +1,17 @@
+2025-01-16 22:28:53,549 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 22:28:53,549 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/models
+2025-01-16 22:28:53,549 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/logs
+2025-01-16 22:28:53,549 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/quarantine
+2025-01-16 22:28:53,923 - root - INFO - Successfully loaded XGBoost model
+2025-01-16 22:28:53,924 - root - INFO - Successfully loaded StandardScaler
+2025-01-16 22:28:53,992 - root - ERROR - Error in GUI initialization/execution: 'Config' object is not subscriptable
+2025-01-16 22:28:53,992 - root - CRITICAL - Critical error in main: 'Config' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 104, in main
+    app = MainWindow(config)
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/main_window.py", line 17, in __init__
+    self.setup_logging()
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/main_window.py", line 58, in setup_logging
+    filename=self.configuration['LOGGING']['MAIN_LOG'],
+TypeError: 'Config' object is not subscriptable
+2025-01-16 22:28:53,993 - root - INFO - CounterBalance IDS shutting down...

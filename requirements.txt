@@ -1,0 +1,7 @@
+scapy
+requests
+psutil
+numpy
+pandas
+scikit-learn
+tensorflow

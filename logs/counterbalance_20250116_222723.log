@@ -1,0 +1,10 @@
+2025-01-16 22:27:23,937 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 22:27:24,206 - root - INFO - Encoders initialized successfully
+2025-01-16 22:27:24,206 - root - INFO - Model handler initialized successfully
+2025-01-16 22:27:24,328 - root - INFO - Main window created successfully
+2025-01-16 22:27:24,329 - root - ERROR - Failed to initialize network processor: NetworkProcessor.__init__() takes from 1 to 3 positional arguments but 4 were given
+2025-01-16 22:27:24,329 - root - CRITICAL - Critical error in main: NetworkProcessor.__init__() takes from 1 to 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 53, in main
+    network_processor = NetworkProcessor(CONFIG, model_handler, app.threats_tab)
+TypeError: NetworkProcessor.__init__() takes from 1 to 3 positional arguments but 4 were given

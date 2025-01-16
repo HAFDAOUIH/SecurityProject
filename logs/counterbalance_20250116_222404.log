@@ -1,0 +1,27 @@
+2025-01-16 22:24:04,709 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 22:24:04,974 - root - INFO - Encoders initialized successfully
+2025-01-16 22:24:04,974 - root - INFO - Model handler initialized successfully
+2025-01-16 22:24:05,035 - root - ERROR - Failed to create main window: No module named 'xgboost'
+2025-01-16 22:24:05,035 - root - CRITICAL - Critical error in main: No module named 'xgboost'
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 45, in main
+    app = MainWindow(CONFIG)
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/main_window.py", line 16, in __init__
+    self.create_notebook()
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/main_window.py", line 47, in create_notebook
+    self.network_tab = NetworkTab(self.notebook)
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/tabs/network_tab.py", line 14, in __init__
+    self.network_processor = NetworkProcessor()
+  File "/home/amgarou/PycharmProjects/CounterBalance/utils/network_processor.py", line 12, in __init__
+    self.model = joblib.load(model_path)
+  File "/usr/local/lib/python3.10/dist-packages/joblib/numpy_pickle.py", line 658, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/usr/local/lib/python3.10/dist-packages/joblib/numpy_pickle.py", line 577, in _unpickle
+    obj = unpickler.load()
+  File "/usr/lib/python3.10/pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+  File "/usr/lib/python3.10/pickle.py", line 1538, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/usr/lib/python3.10/pickle.py", line 1580, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'xgboost'

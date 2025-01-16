@@ -1,0 +1,7 @@
+2025-01-16 22:00:45,034 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 22:00:45,251 - root - INFO - Encoders initialized successfully
+2025-01-16 22:00:45,251 - root - INFO - Model handler initialized successfully
+2025-01-16 22:00:45,307 - root - INFO - Main window created successfully
+2025-01-16 22:00:45,307 - root - INFO - Network processor initialized and capturing started
+2025-01-16 22:00:45,307 - root - INFO - Network processor initialized and capturing started
+2025-01-16 22:00:45,307 - root - INFO - Starting main event loop...

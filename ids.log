@@ -1,0 +1,333 @@
+2025-01-15 19:20:42,575 - IDSApplication - INFO - Initializing directories...
+2025-01-15 19:20:42,575 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 19:20:42,719 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 19:20:42,723 - root - INFO - Models loaded successfully
+2025-01-15 19:20:42,723 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 19:20:42,782 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 19:20:42,782 - IDSApplication - INFO - Starting network capture...
+2025-01-15 19:20:42,782 - IDSApplication - ERROR - Runtime error: 'NetworkProcessor' object has no attribute 'start_capture'
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 77, in start
+    self.network_processor.start_capture()
+AttributeError: 'NetworkProcessor' object has no attribute 'start_capture'
+2025-01-15 19:20:42,782 - IDSApplication - INFO - Initiating shutdown...
+2025-01-15 19:20:42,782 - IDSApplication - INFO - Stopping network capture...
+2025-01-15 19:20:42,782 - IDSApplication - ERROR - Error during shutdown: 'NetworkProcessor' object has no attribute 'stop_capture'
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 77, in start
+    self.network_processor.start_capture()
+AttributeError: 'NetworkProcessor' object has no attribute 'start_capture'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 139, in shutdown
+    self.network_processor.stop_capture()
+AttributeError: 'NetworkProcessor' object has no attribute 'stop_capture'
+2025-01-15 19:28:02,938 - IDSApplication - INFO - Initializing directories...
+2025-01-15 19:28:02,938 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 19:28:03,091 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 19:28:03,095 - root - INFO - Models loaded successfully
+2025-01-15 19:28:03,095 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 19:28:03,156 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 19:28:03,156 - IDSApplication - INFO - Starting network capture...
+2025-01-15 19:28:03,156 - root - INFO - Network capture started successfully
+2025-01-15 19:28:03,157 - IDSApplication - INFO - Starting GUI main loop...
+2025-01-15 19:28:04,437 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 108.157.125.5 with confidence 0.83
+2025-01-15 19:28:04,478 - root - INFO - Detected Suspicious Activity attack from 108.157.125.5 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:04,558 - root - INFO - Detected Suspicious Activity attack from 108.157.125.5 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:04,720 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.83
+2025-01-15 19:28:05,203 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:06,123 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:06,330 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:06,409 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.81
+2025-01-15 19:28:08,988 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.92
+2025-01-15 19:28:09,032 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.92
+2025-01-15 19:28:09,074 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:09,160 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:09,201 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:09,358 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 92.123.238.202 with confidence 0.82
+2025-01-15 19:28:09,441 - root - INFO - Detected Suspicious Activity attack from 92.123.238.202 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:09,519 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 92.123.238.202 with confidence 0.80
+2025-01-15 19:28:09,558 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 92.123.238.202 with confidence 0.79
+2025-01-15 19:28:09,643 - root - INFO - Detected Suspicious Activity attack from 92.123.238.202 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:28:09,722 - root - INFO - Detected Suspicious Activity attack from 92.123.238.202 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:28:10,654 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 157.240.212.60 with confidence 0.83
+2025-01-15 19:28:10,741 - root - INFO - Detected Suspicious Activity attack from 157.240.212.60 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:11,403 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.80
+2025-01-15 19:28:11,598 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:18,720 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 104.18.30.173 with confidence 0.83
+2025-01-15 19:28:18,766 - root - INFO - Detected Suspicious Activity attack from 104.18.30.173 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:25,816 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 157.240.212.60 with confidence 0.81
+2025-01-15 19:28:25,902 - root - INFO - Detected Suspicious Activity attack from 157.240.212.60 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:26,580 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.79
+2025-01-15 19:28:26,753 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:28:26,886 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.91
+2025-01-15 19:28:26,926 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:27,869 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.170 with confidence 0.83
+2025-01-15 19:28:28,011 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:29,276 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:29,368 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:29,460 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:28:29,543 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.170 with confidence 0.77
+2025-01-15 19:28:29,583 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.91
+2025-01-15 19:28:29,627 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:29,670 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.170 with confidence 0.76
+2025-01-15 19:28:29,874 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:28:29,955 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:28:30,036 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:28:30,115 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.170 with confidence 0.73
+2025-01-15 19:28:30,155 - root - INFO - Detected DOS Attack attack from 192.168.100.138 to 142.250.184.170 with confidence 0.72
+2025-01-15 19:28:30,315 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.86
+2025-01-15 19:28:30,356 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:28:31,869 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 157.240.212.60 with confidence 0.80
+2025-01-15 19:28:31,913 - root - INFO - Detected Suspicious Activity attack from 157.240.212.60 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:34,817 - root - INFO - Detected Suspicious Activity attack from 157.240.212.60 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:28:34,918 - root - INFO - Detected Suspicious Activity attack from 157.240.212.60 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:28:35,112 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 157.240.212.60 with confidence 0.76
+2025-01-15 19:28:35,202 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 157.240.212.60 with confidence 0.75
+2025-01-15 19:28:35,256 - root - INFO - Detected Suspicious Activity attack from 157.240.212.60 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:28:35,342 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:35,425 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:35,514 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:35,598 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:28:35,679 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.10 with confidence 0.78
+2025-01-15 19:28:35,721 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.90
+2025-01-15 19:28:35,763 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.10 with confidence 0.77
+2025-01-15 19:28:35,810 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:28:36,036 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:28:36,130 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.88
+2025-01-15 19:28:36,224 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.87
+2025-01-15 19:28:36,406 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.86
+2025-01-15 19:28:36,497 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.86
+2025-01-15 19:28:36,674 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.84
+2025-01-15 19:28:36,762 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.84
+2025-01-15 19:28:36,933 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.82
+2025-01-15 19:28:37,027 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.81
+2025-01-15 19:28:37,112 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.80
+2025-01-15 19:28:37,275 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.79
+2025-01-15 19:28:37,356 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.78
+2025-01-15 19:28:37,440 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:28:37,482 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:28:37,568 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.77
+2025-01-15 19:28:37,653 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.76
+2025-01-15 19:28:37,751 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.75
+2025-01-15 19:28:37,839 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.73
+2025-01-15 19:28:37,936 - root - INFO - Detected DOS Attack attack from 157.240.212.60 to 192.168.100.138 with confidence 0.72
+2025-01-15 19:28:38,697 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:28:38,740 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.88
+2025-01-15 19:28:38,824 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.88
+2025-01-15 19:28:38,866 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.87
+2025-01-15 19:28:38,955 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.10 with confidence 0.73
+2025-01-15 19:28:39,004 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.10 with confidence 0.72
+2025-01-15 19:28:39,133 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:28:39,179 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.84
+2025-01-15 19:28:41,717 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.77
+2025-01-15 19:28:41,878 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:28:42,479 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.92
+2025-01-15 19:28:42,685 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.92
+2025-01-15 19:28:42,997 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.92
+2025-01-15 19:28:43,186 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.92
+2025-01-15 19:28:49,646 - root - INFO - Detected DOS Attack attack from 142.250.184.170 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:28:50,145 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.84
+2025-01-15 19:28:51,082 - root - INFO - Detected DOS Attack attack from 142.250.184.170 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:28:51,213 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.83
+2025-01-15 19:28:56,879 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.76
+2025-01-15 19:28:57,021 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:29:01,242 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.90
+2025-01-15 19:29:01,289 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.89
+2025-01-15 19:29:01,332 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:29:01,376 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:29:01,930 - root - INFO - Detected Suspicious Activity attack from 140.82.112.25 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:29:01,971 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 140.82.112.25 with confidence 0.83
+2025-01-15 19:29:07,199 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.89
+2025-01-15 19:29:07,250 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.88
+2025-01-15 19:29:07,298 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:29:07,391 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:29:07,563 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.178.174 with confidence 0.82
+2025-01-15 19:29:07,605 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.178.174 with confidence 0.81
+2025-01-15 19:29:07,928 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:29:08,017 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:29:08,100 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.178.174 with confidence 0.77
+2025-01-15 19:29:08,142 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.178.174 with confidence 0.76
+2025-01-15 19:29:08,186 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:29:08,451 - root - INFO - Detected DOS Attack attack from 142.250.178.174 to 192.168.100.138 with confidence 0.87
+2025-01-15 19:29:08,539 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.87
+2025-01-15 19:29:08,622 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.86
+2025-01-15 19:29:08,706 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.86
+2025-01-15 19:29:08,787 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.178.174 with confidence 0.71
+2025-01-15 19:29:11,253 - root - INFO - Detected DOS Attack attack from 142.250.184.170 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:29:11,347 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 104.18.30.173 with confidence 0.83
+2025-01-15 19:29:11,390 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 104.18.30.173 with confidence 0.82
+2025-01-15 19:29:11,512 - root - INFO - Detected Suspicious Activity attack from 104.18.30.173 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:29:12,020 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.75
+2025-01-15 19:29:12,175 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:29:20,266 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.84
+2025-01-15 19:29:21,186 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.83
+2025-01-15 19:29:27,179 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.73
+2025-01-15 19:29:27,334 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:29:28,427 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.184.170 with confidence 0.71
+2025-01-15 19:29:28,538 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.84
+2025-01-15 19:29:31,442 - root - INFO - Detected DOS Attack attack from 142.250.184.170 to 192.168.100.138 with confidence 0.83
+2025-01-15 19:29:31,529 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.83
+2025-01-15 19:29:31,623 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.82
+2025-01-15 19:29:31,920 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.79
+2025-01-15 19:29:32,007 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.78
+2025-01-15 19:29:32,093 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.77
+2025-01-15 19:29:32,385 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.73
+2025-01-15 19:29:32,429 - root - INFO - Detected Suspicious Activity attack from 142.250.184.170 to 192.168.100.138 with confidence 0.72
+2025-01-15 19:29:35,220 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.83
+2025-01-15 19:29:35,303 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.82
+2025-01-15 19:29:35,394 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.81
+2025-01-15 19:29:35,482 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.80
+2025-01-15 19:29:35,724 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.78
+2025-01-15 19:29:35,765 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.77
+2025-01-15 19:29:36,136 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.76
+2025-01-15 19:29:36,182 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.75
+2025-01-15 19:29:36,268 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.73
+2025-01-15 19:29:36,310 - root - INFO - Detected Suspicious Activity attack from 142.250.184.10 to 192.168.100.138 with confidence 0.72
+2025-01-15 19:29:42,321 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.73
+2025-01-15 19:29:42,492 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:29:43,514 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.92
+2025-01-15 19:29:43,710 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.92
+2025-01-15 19:29:44,022 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.91
+2025-01-15 19:29:44,225 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 239.255.255.250 with confidence 0.91
+2025-01-15 19:29:52,213 - root - INFO - Detected DOS Attack attack from 142.250.184.170 to 192.168.100.138 with confidence 0.72
+2025-01-15 19:29:56,879 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.89
+2025-01-15 19:29:57,021 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:29:57,228 - root - INFO - Detected Suspicious Activity attack from 185.125.190.96 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:29:57,351 - root - INFO - Detected Suspicious Activity attack from 185.125.190.96 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:29:57,609 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.72
+2025-01-15 19:29:57,748 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:29:58,261 - root - INFO - Detected Suspicious Activity attack from 34.107.243.93 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:29:58,303 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.83
+2025-01-15 19:29:58,345 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.82
+2025-01-15 19:30:01,020 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.88
+2025-01-15 19:30:01,067 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.87
+2025-01-15 19:30:01,231 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:30:01,274 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:30:01,516 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 204.10.37.81 with confidence 0.82
+2025-01-15 19:30:01,772 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 204.10.37.81 with confidence 0.80
+2025-01-15 19:30:01,818 - root - INFO - Detected Suspicious Activity attack from 204.10.37.81 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:30:01,863 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 204.10.37.81 with confidence 0.79
+2025-01-15 19:30:01,906 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 204.10.37.81 with confidence 0.78
+2025-01-15 19:30:02,051 - root - INFO - Detected Suspicious Activity attack from 204.10.37.81 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:30:02,094 - root - INFO - Detected Suspicious Activity attack from 204.10.37.81 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:30:02,221 - root - INFO - Detected Suspicious Activity attack from 204.10.37.81 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:30:02,264 - root - INFO - Detected Suspicious Activity attack from 140.82.112.25 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:30:02,306 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 140.82.112.25 with confidence 0.84
+2025-01-15 19:30:03,329 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.87
+2025-01-15 19:30:03,375 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.86
+2025-01-15 19:30:03,423 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:30:03,472 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:30:03,690 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.80
+2025-01-15 19:30:04,016 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.77
+2025-01-15 19:30:04,063 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.76
+2025-01-15 19:30:04,206 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.75
+2025-01-15 19:30:04,380 - root - INFO - Detected DOS Attack attack from 192.168.100.138 to 34.107.243.93 with confidence 0.73
+2025-01-15 19:30:04,675 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.71
+2025-01-15 19:30:04,718 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.71
+2025-01-15 19:30:04,841 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.107.243.93 with confidence 0.70
+2025-01-15 19:30:04,962 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.85
+2025-01-15 19:30:05,012 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.85
+2025-01-15 19:30:05,104 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.88
+2025-01-15 19:30:05,188 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.88
+2025-01-15 19:30:05,232 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 192.168.100.1 with confidence 0.84
+2025-01-15 19:30:05,274 - root - INFO - Detected Suspicious Activity attack from 192.168.100.1 to 192.168.100.138 with confidence 0.87
+2025-01-15 19:30:05,440 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.149.100.209 with confidence 0.82
+2025-01-15 19:30:05,521 - root - INFO - Detected Suspicious Activity attack from 34.149.100.209 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:30:05,608 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.149.100.209 with confidence 0.80
+2025-01-15 19:30:05,654 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.149.100.209 with confidence 0.79
+2025-01-15 19:30:05,701 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.149.100.209 with confidence 0.78
+2025-01-15 19:30:05,745 - root - INFO - Detected Suspicious Activity attack from 34.149.100.209 to 192.168.100.138 with confidence 0.92
+2025-01-15 19:30:05,787 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.149.100.209 with confidence 0.77
+2025-01-15 19:30:05,871 - root - INFO - Detected Suspicious Activity attack from 34.149.100.209 to 192.168.100.138 with confidence 0.91
+2025-01-15 19:30:05,914 - root - INFO - Detected Suspicious Activity attack from 34.149.100.209 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:30:05,957 - root - INFO - Detected Suspicious Activity attack from 34.149.100.209 to 192.168.100.138 with confidence 0.90
+2025-01-15 19:30:05,999 - root - INFO - Detected Suspicious Activity attack from 34.149.100.209 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:30:06,092 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.149.100.209 with confidence 0.75
+2025-01-15 19:30:06,179 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.71
+2025-01-15 19:30:06,223 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 92.123.238.202 with confidence 0.73
+2025-01-15 19:30:06,267 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 92.123.238.202 with confidence 0.72
+2025-01-15 19:30:06,355 - root - INFO - Detected Suspicious Activity attack from 92.123.238.202 to 192.168.100.138 with confidence 0.86
+2025-01-15 19:30:06,442 - root - INFO - Detected Suspicious Activity attack from 92.123.238.202 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:30:06,897 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:30:06,941 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 142.250.178.174 with confidence 0.73
+2025-01-15 19:30:07,033 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.71
+2025-01-15 19:30:07,119 - root - INFO - Detected Suspicious Activity attack from 142.250.178.174 to 192.168.100.138 with confidence 0.85
+2025-01-15 19:30:07,358 - root - INFO - Detected Suspicious Activity attack from 204.10.37.81 to 192.168.100.138 with confidence 0.89
+2025-01-15 19:30:07,442 - root - INFO - Detected Suspicious Activity attack from 204.10.37.81 to 192.168.100.138 with confidence 0.88
+2025-01-15 19:30:12,687 - root - INFO - Detected DOS Attack attack from 142.250.184.170 to 192.168.100.138 with confidence 0.71
+2025-01-15 19:30:12,776 - root - INFO - Detected Suspicious Activity attack from 192.168.100.138 to 34.237.73.95 with confidence 0.70
+2025-01-15 19:30:12,944 - root - INFO - Detected Suspicious Activity attack from 34.237.73.95 to 192.168.100.138 with confidence 0.87
+2025-01-15 19:30:16,668 - IDSApplication - INFO - Initiating shutdown...
+2025-01-15 19:30:16,668 - IDSApplication - INFO - Stopping network capture...
+2025-01-15 19:30:16,857 - root - INFO - Network capture stopped successfully
+2025-01-15 19:30:16,858 - IDSApplication - INFO - Closing GUI...
+2025-01-15 19:30:16,861 - IDSApplication - INFO - Shutdown complete
+2025-01-15 19:32:30,240 - IDSApplication - INFO - Initializing directories...
+2025-01-15 19:32:30,240 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 19:32:30,398 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 19:32:30,403 - root - INFO - Models loaded successfully
+2025-01-15 19:32:30,403 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 19:32:30,463 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 19:32:30,463 - IDSApplication - INFO - Starting network capture...
+2025-01-15 19:32:30,464 - root - INFO - Network capture started successfully
+2025-01-15 19:32:30,464 - IDSApplication - INFO - Starting GUI main loop...
+2025-01-15 19:32:44,028 - IDSApplication - INFO - Initiating shutdown...
+2025-01-15 19:32:44,028 - IDSApplication - INFO - Stopping network capture...
+2025-01-15 19:32:44,295 - root - INFO - Network capture stopped successfully
+2025-01-15 19:32:44,296 - IDSApplication - INFO - Closing GUI...
+2025-01-15 19:32:44,297 - IDSApplication - INFO - Shutdown complete
+2025-01-15 19:32:57,528 - IDSApplication - INFO - Initializing directories...
+2025-01-15 19:32:57,528 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 19:32:57,687 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 19:32:57,692 - root - INFO - Models loaded successfully
+2025-01-15 19:32:57,692 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 19:32:57,756 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 19:32:57,756 - IDSApplication - INFO - Starting network capture...
+2025-01-15 19:32:57,756 - root - INFO - Network capture started successfully
+2025-01-15 19:32:57,756 - IDSApplication - INFO - Starting GUI main loop...
+2025-01-15 19:33:11,903 - IDSApplication - INFO - Initiating shutdown...
+2025-01-15 19:33:11,903 - IDSApplication - INFO - Stopping network capture...
+2025-01-15 19:33:12,603 - root - INFO - Network capture stopped successfully
+2025-01-15 19:33:12,603 - IDSApplication - INFO - Closing GUI...
+2025-01-15 19:33:12,609 - IDSApplication - INFO - Shutdown complete
+2025-01-15 19:34:01,365 - IDSApplication - INFO - Initializing directories...
+2025-01-15 19:34:01,366 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 19:34:01,518 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 19:34:01,522 - root - INFO - Models loaded successfully
+2025-01-15 19:34:01,522 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 19:34:01,586 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 19:34:01,586 - IDSApplication - INFO - Starting network capture...
+2025-01-15 19:34:01,586 - root - INFO - Network capture started successfully
+2025-01-15 19:34:01,587 - IDSApplication - INFO - Starting GUI main loop...
+2025-01-15 19:34:10,069 - IDSApplication - INFO - Initiating shutdown...
+2025-01-15 19:34:10,069 - IDSApplication - INFO - Stopping network capture...
+2025-01-15 19:34:10,636 - root - INFO - Network capture stopped successfully
+2025-01-15 19:34:10,636 - IDSApplication - INFO - Closing GUI...
+2025-01-15 19:34:10,638 - IDSApplication - INFO - Shutdown complete
+2025-01-15 19:34:25,690 - IDSApplication - INFO - Initializing directories...
+2025-01-15 19:34:25,690 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 19:34:25,836 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 19:34:25,841 - root - INFO - Models loaded successfully
+2025-01-15 19:34:25,841 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 19:34:25,900 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 19:34:25,900 - IDSApplication - INFO - Starting network capture...
+2025-01-15 19:34:25,901 - root - INFO - Network capture started successfully
+2025-01-15 19:34:25,901 - IDSApplication - INFO - Starting GUI main loop...
+2025-01-15 22:27:23,551 - IDSApplication - INFO - Initializing directories...
+2025-01-15 22:27:23,551 - IDSApplication - INFO - Initializing model handler...
+2025-01-15 22:27:23,748 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-15 22:27:23,753 - root - INFO - Models loaded successfully
+2025-01-15 22:27:23,753 - IDSApplication - INFO - Initializing GUI...
+2025-01-15 22:27:23,826 - IDSApplication - INFO - Initializing network processor...
+2025-01-15 22:27:23,826 - IDSApplication - INFO - Starting network capture...
+2025-01-15 22:27:23,827 - root - INFO - Network capture started successfully
+2025-01-15 22:27:23,827 - IDSApplication - INFO - Starting GUI main loop...
+2025-01-15 22:27:39,859 - IDSApplication - INFO - Initiating shutdown...
+2025-01-15 22:27:39,860 - IDSApplication - INFO - Stopping network capture...
+2025-01-15 22:27:40,852 - root - WARNING - Packet queue full, dropping packet
+2025-01-15 22:27:40,861 - root - INFO - Network capture stopped successfully
+2025-01-15 22:27:40,861 - IDSApplication - INFO - Closing GUI...
+2025-01-15 22:27:40,863 - IDSApplication - INFO - Shutdown complete

@@ -1,0 +1,16 @@
+2025-01-16 16:55:48,993 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 16:55:48,993 - root - INFO - Initializing directories...
+2025-01-16 16:55:48,993 - root - INFO - Initializing model handler...
+2025-01-16 16:55:48,997 - h5py._conv - DEBUG - Creating converter from 3 to 5
+2025-01-16 16:55:49,147 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-16 16:55:49,152 - root - ERROR - Error loading models: No module named 'numpy._core'
+2025-01-16 16:55:49,152 - root - ERROR - Failed to initialize model handler: No module named 'numpy._core'
+2025-01-16 16:55:49,152 - root - CRITICAL - Critical error in main: No module named 'numpy._core'
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 43, in main
+    model_handler = ModelHandler(CONFIG)
+  File "/home/amgarou/PycharmProjects/CounterBalance/utils/model_handler.py", line 87, in __init__
+    self.load_models()
+  File "/home/amgarou/PycharmProjects/CounterBalance/utils/model_handler.py", line 123, in load_models
+    self.scaler = pickle.load(f)
+ModuleNotFoundError: No module named 'numpy._core'

@@ -1,0 +1,17 @@
+2025-01-16 22:34:02,085 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 22:34:02,085 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/models
+2025-01-16 22:34:02,085 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/logs
+2025-01-16 22:34:02,085 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/quarantine
+2025-01-16 22:34:02,461 - root - INFO - Successfully loaded XGBoost model
+2025-01-16 22:34:02,462 - root - INFO - Successfully loaded StandardScaler
+2025-01-16 22:34:02,535 - root - ERROR - Error in GUI initialization/execution: module 'utils.config' has no attribute 'LOG_FILE_PATH'
+2025-01-16 22:34:02,535 - root - CRITICAL - Critical error in main: module 'utils.config' has no attribute 'LOG_FILE_PATH'
+Traceback (most recent call last):
+  File "/home/amgarou/PycharmProjects/CounterBalance/main.py", line 105, in main
+    app = MainWindow(config)
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/main_window.py", line 19, in __init__
+    self.setup_logging()
+  File "/home/amgarou/PycharmProjects/CounterBalance/gui/main_window.py", line 60, in setup_logging
+    filename=config.LOG_FILE_PATH,
+AttributeError: module 'utils.config' has no attribute 'LOG_FILE_PATH'
+2025-01-16 22:34:02,535 - root - INFO - CounterBalance IDS shutting down...

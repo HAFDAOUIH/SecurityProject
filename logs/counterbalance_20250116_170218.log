@@ -1,0 +1,75 @@
+2025-01-16 17:02:18,039 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 17:02:18,039 - root - INFO - Initializing directories...
+2025-01-16 17:02:18,040 - root - INFO - Initializing model handler...
+2025-01-16 17:02:18,043 - h5py._conv - DEBUG - Creating converter from 3 to 5
+2025-01-16 17:02:18,261 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-01-16 17:02:18,265 - root - INFO - Models loaded successfully
+2025-01-16 17:02:18,266 - root - INFO - Encoders initialized successfully
+2025-01-16 17:02:18,266 - root - INFO - Model handler initialized successfully
+2025-01-16 17:02:18,266 - root - INFO - Creating main window...
+2025-01-16 17:02:18,324 - root - INFO - Main window created successfully
+2025-01-16 17:02:18,324 - root - INFO - Setting up network processor...
+2025-01-16 17:02:18,324 - root - INFO - Network processor initialized successfully
+2025-01-16 17:02:18,324 - root - INFO - Connecting network processor to UI...
+2025-01-16 17:02:18,324 - root - INFO - Network processor connected to UI successfully
+2025-01-16 17:02:18,324 - root - INFO - Starting network capture...
+2025-01-16 17:02:18,324 - root - INFO - Network capture started successfully
+2025-01-16 17:02:18,325 - root - INFO - Network capture started successfully
+2025-01-16 17:02:18,325 - root - INFO - Starting main event loop...
+2025-01-16 17:02:20,374 - root - DEBUG - Processing batch of 11 packets
+2025-01-16 17:02:20,386 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:20,394 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:20,395 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:20,395 - root - DEBUG - Predictions shape: (11, 1)
+2025-01-16 17:02:21,874 - root - DEBUG - Processing batch of 1 packets
+2025-01-16 17:02:21,877 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:21,880 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:21,880 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:21,880 - root - DEBUG - Predictions shape: (1, 1)
+2025-01-16 17:02:24,002 - root - DEBUG - Processing batch of 5 packets
+2025-01-16 17:02:24,007 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:24,009 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:24,009 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:24,009 - root - DEBUG - Predictions shape: (5, 1)
+2025-01-16 17:02:32,919 - root - DEBUG - Processing batch of 61 packets
+2025-01-16 17:02:32,940 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:32,950 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:32,950 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:32,951 - root - DEBUG - Predictions shape: (61, 1)
+2025-01-16 17:02:35,053 - root - DEBUG - Processing batch of 13 packets
+2025-01-16 17:02:35,066 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:35,072 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:35,072 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:35,072 - root - DEBUG - Predictions shape: (13, 1)
+2025-01-16 17:02:38,352 - root - DEBUG - Processing batch of 9 packets
+2025-01-16 17:02:38,355 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:38,357 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:38,357 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:38,358 - root - DEBUG - Predictions shape: (9, 1)
+2025-01-16 17:02:40,974 - root - DEBUG - Processing batch of 7 packets
+2025-01-16 17:02:40,982 - root - DEBUG - Processing batch with features: Index(['duration', 'protocol_type', 'service', 'flag', 'src_bytes',
+       'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
+       'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'],
+      dtype='object')
+2025-01-16 17:02:40,988 - root - WARNING - Error encoding flag: y contains previously unseen labels: np.str_('oth'). Using default value.
+2025-01-16 17:02:40,988 - root - ERROR - Error preprocessing features: y contains previously unseen labels: np.str_('oth')
+2025-01-16 17:02:40,988 - root - DEBUG - Predictions shape: (7, 1)
+2025-01-16 17:02:46,061 - root - INFO - Application closed normally

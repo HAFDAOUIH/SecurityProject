@@ -1,0 +1,9 @@
+2025-01-16 23:04:11,918 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 23:04:11,918 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/models
+2025-01-16 23:04:11,918 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/logs
+2025-01-16 23:04:11,919 - root - INFO - Initialized directory: /home/amgarou/PycharmProjects/CounterBalance/quarantine
+2025-01-16 23:04:12,329 - root - INFO - Successfully loaded XGBoost model
+2025-01-16 23:04:12,329 - root - INFO - Successfully loaded StandardScaler
+2025-01-16 23:04:12,403 - root - INFO - Main window created successfully
+2025-01-16 23:04:12,403 - root - INFO - Starting main event loop...
+2025-01-16 23:04:36,985 - root - INFO - CounterBalance IDS shutting down...

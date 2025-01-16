@@ -1,0 +1,33 @@
+2025-01-16 17:29:38,299 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 17:29:38,299 - root - INFO - Initializing directories...
+2025-01-16 17:29:38,299 - root - INFO - Initializing model handler...
+2025-01-16 17:29:38,542 - root - INFO - Encoders initialized successfully
+2025-01-16 17:29:38,542 - root - INFO - Model handler initialized successfully
+2025-01-16 17:29:38,542 - root - INFO - Creating main window...
+2025-01-16 17:29:38,600 - root - INFO - Main window created successfully
+2025-01-16 17:29:38,600 - root - INFO - Setting up network processor...
+2025-01-16 17:29:38,600 - root - INFO - Network processor initialized successfully
+2025-01-16 17:29:38,600 - root - INFO - Connecting network processor to UI...
+2025-01-16 17:29:38,600 - root - INFO - Network processor connected to UI successfully
+2025-01-16 17:29:38,600 - root - INFO - Starting network capture...
+2025-01-16 17:29:38,600 - root - INFO - Network capture started successfully
+2025-01-16 17:29:38,600 - root - INFO - Network capture started successfully
+2025-01-16 17:29:38,600 - root - INFO - Starting main event loop...
+2025-01-16 17:29:38,652 - root - INFO - Processing packet #1
+2025-01-16 17:29:38,653 - root - INFO - Features extracted successfully for packet #1
+2025-01-16 17:29:38,654 - root - INFO - Processing packet #2
+2025-01-16 17:29:38,654 - root - INFO - Features extracted successfully for packet #2
+2025-01-16 17:29:38,655 - root - INFO - Processing packet #3
+2025-01-16 17:29:38,655 - root - INFO - Features extracted successfully for packet #3
+2025-01-16 17:29:39,040 - root - INFO - Processing packet #4
+2025-01-16 17:29:39,042 - root - INFO - Features extracted successfully for packet #4
+2025-01-16 17:29:39,045 - root - INFO - Processing packet #5
+2025-01-16 17:29:39,046 - root - INFO - Features extracted successfully for packet #5
+2025-01-16 17:29:39,048 - root - INFO - Processing buffer of 5 packets
+2025-01-16 17:29:39,048 - root - INFO - Combined features shape: (5, 15)
+2025-01-16 17:29:39,050 - root - INFO - Making predictions...
+2025-01-16 17:29:39,050 - root - INFO - Starting prediction for features shape: (5, 15)
+2025-01-16 17:29:39,050 - root - INFO - Converted features to float type
+2025-01-16 17:29:39,052 - root - INFO - Features scaled successfully
+2025-01-16 17:29:39,052 - root - INFO - Reshaped features to: (5, 1, 15)
+2025-01-16 17:29:39,052 - root - INFO - Making prediction on CPU...

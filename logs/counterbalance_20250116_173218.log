@@ -1,0 +1,193 @@
+2025-01-16 17:32:18,147 - root - INFO - Starting CounterBalance IDS...
+2025-01-16 17:32:18,147 - root - INFO - Initializing directories...
+2025-01-16 17:32:18,147 - root - INFO - Initializing model handler...
+2025-01-16 17:32:18,382 - root - INFO - Encoders initialized successfully
+2025-01-16 17:32:18,382 - root - INFO - Model handler initialized successfully
+2025-01-16 17:32:18,382 - root - INFO - Creating main window...
+2025-01-16 17:32:18,437 - root - INFO - Main window created successfully
+2025-01-16 17:32:18,437 - root - INFO - Setting up network processor...
+2025-01-16 17:32:18,438 - root - INFO - Network processor initialized successfully
+2025-01-16 17:32:18,438 - root - INFO - Connecting network processor to UI...
+2025-01-16 17:32:18,438 - root - INFO - Network processor connected to UI successfully
+2025-01-16 17:32:18,438 - root - INFO - Starting network capture...
+2025-01-16 17:32:18,438 - root - INFO - Network capture started successfully
+2025-01-16 17:32:18,438 - root - INFO - Network capture started successfully
+2025-01-16 17:32:18,438 - root - INFO - Starting main event loop...
+2025-01-16 17:32:18,728 - root - INFO - Processing packet #1
+2025-01-16 17:32:18,732 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:19,406 - root - INFO - Processing packet #2
+2025-01-16 17:32:19,408 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:19,408 - root - INFO - Processing packet #3
+2025-01-16 17:32:19,409 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:19,676 - root - INFO - Processing packet #4
+2025-01-16 17:32:19,678 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:19,704 - root - INFO - Processing packet #5
+2025-01-16 17:32:19,705 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:19,749 - root - INFO - Processing packet #6
+2025-01-16 17:32:19,749 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:20,763 - root - INFO - Processing packet #7
+2025-01-16 17:32:20,766 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:20,911 - root - INFO - Processing packet #8
+2025-01-16 17:32:20,915 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:20,915 - root - INFO - Processing packet #9
+2025-01-16 17:32:20,917 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,177 - root - INFO - Processing packet #10
+2025-01-16 17:32:21,180 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,224 - root - INFO - Processing packet #11
+2025-01-16 17:32:21,226 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,316 - root - INFO - Processing packet #12
+2025-01-16 17:32:21,319 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,330 - root - INFO - Processing packet #13
+2025-01-16 17:32:21,333 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,422 - root - INFO - Processing packet #14
+2025-01-16 17:32:21,429 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,429 - root - INFO - Processing packet #15
+2025-01-16 17:32:21,431 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,517 - root - INFO - Processing packet #16
+2025-01-16 17:32:21,520 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,716 - root - INFO - Processing packet #17
+2025-01-16 17:32:21,718 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:21,822 - root - INFO - Processing packet #18
+2025-01-16 17:32:21,824 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,121 - root - INFO - Processing packet #19
+2025-01-16 17:32:22,123 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,325 - root - INFO - Processing packet #20
+2025-01-16 17:32:22,325 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,429 - root - INFO - Processing packet #21
+2025-01-16 17:32:22,436 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,436 - root - INFO - Processing packet #22
+2025-01-16 17:32:22,438 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,533 - root - INFO - Processing packet #23
+2025-01-16 17:32:22,535 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,535 - root - INFO - Processing packet #24
+2025-01-16 17:32:22,537 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:22,927 - root - INFO - Processing packet #25
+2025-01-16 17:32:22,928 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:23,182 - root - INFO - Processing packet #26
+2025-01-16 17:32:23,184 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:23,228 - root - INFO - Processing packet #27
+2025-01-16 17:32:23,235 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:23,434 - root - INFO - Processing packet #28
+2025-01-16 17:32:23,437 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:23,530 - root - INFO - Processing packet #29
+2025-01-16 17:32:23,538 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:23,538 - root - INFO - Processing packet #30
+2025-01-16 17:32:23,540 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:23,747 - root - INFO - Processing packet #31
+2025-01-16 17:32:23,749 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,683 - root - INFO - Processing packet #32
+2025-01-16 17:32:24,684 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,762 - root - INFO - Processing packet #33
+2025-01-16 17:32:24,763 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,840 - root - INFO - Processing packet #34
+2025-01-16 17:32:24,842 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,916 - root - INFO - Processing packet #35
+2025-01-16 17:32:24,919 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,919 - root - INFO - Processing packet #36
+2025-01-16 17:32:24,921 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,968 - root - INFO - Processing packet #37
+2025-01-16 17:32:24,970 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,970 - root - INFO - Processing packet #38
+2025-01-16 17:32:24,972 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:24,972 - root - INFO - Processing packet #39
+2025-01-16 17:32:24,973 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,019 - root - INFO - Processing packet #40
+2025-01-16 17:32:25,020 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,020 - root - INFO - Processing packet #41
+2025-01-16 17:32:25,021 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,021 - root - INFO - Processing packet #42
+2025-01-16 17:32:25,021 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,022 - root - INFO - Processing packet #43
+2025-01-16 17:32:25,022 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,022 - root - INFO - Processing packet #44
+2025-01-16 17:32:25,023 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,070 - root - INFO - Processing packet #45
+2025-01-16 17:32:25,073 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:25,537 - root - INFO - Processing packet #46
+2025-01-16 17:32:25,539 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,187 - root - INFO - Processing packet #47
+2025-01-16 17:32:26,189 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,441 - root - INFO - Processing packet #48
+2025-01-16 17:32:26,444 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,544 - root - INFO - Processing packet #49
+2025-01-16 17:32:26,545 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,545 - root - INFO - Processing packet #50
+2025-01-16 17:32:26,546 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,546 - root - INFO - Processing packet #51
+2025-01-16 17:32:26,546 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,633 - root - INFO - Processing packet #52
+2025-01-16 17:32:26,635 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,836 - root - INFO - Processing packet #53
+2025-01-16 17:32:26,839 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,942 - root - INFO - Processing packet #54
+2025-01-16 17:32:26,945 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:26,947 - root - INFO - Processing packet #55
+2025-01-16 17:32:26,949 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,146 - root - INFO - Processing packet #56
+2025-01-16 17:32:27,148 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,148 - root - INFO - Processing packet #57
+2025-01-16 17:32:27,151 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,438 - root - INFO - Processing packet #58
+2025-01-16 17:32:27,441 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,545 - root - INFO - Processing packet #59
+2025-01-16 17:32:27,549 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,552 - root - INFO - Processing packet #60
+2025-01-16 17:32:27,556 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,597 - root - INFO - Processing packet #61
+2025-01-16 17:32:27,600 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,610 - root - INFO - Processing packet #62
+2025-01-16 17:32:27,612 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,614 - root - INFO - Processing packet #63
+2025-01-16 17:32:27,616 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,616 - root - INFO - Processing packet #64
+2025-01-16 17:32:27,618 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,639 - root - INFO - Processing packet #65
+2025-01-16 17:32:27,644 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:27,689 - root - INFO - Processing packet #66
+2025-01-16 17:32:27,691 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,043 - root - INFO - Processing packet #67
+2025-01-16 17:32:28,045 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,342 - root - INFO - Processing packet #68
+2025-01-16 17:32:28,344 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,544 - root - INFO - Processing packet #69
+2025-01-16 17:32:28,546 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,597 - root - INFO - Processing packet #70
+2025-01-16 17:32:28,598 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,598 - root - INFO - Processing packet #71
+2025-01-16 17:32:28,599 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,630 - root - INFO - Processing packet #72
+2025-01-16 17:32:28,631 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,631 - root - INFO - Processing packet #73
+2025-01-16 17:32:28,632 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,647 - root - INFO - Processing packet #74
+2025-01-16 17:32:28,650 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,650 - root - INFO - Processing packet #75
+2025-01-16 17:32:28,651 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,651 - root - INFO - Processing packet #76
+2025-01-16 17:32:28,651 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,651 - root - INFO - Processing packet #77
+2025-01-16 17:32:28,652 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,671 - root - INFO - Processing packet #78
+2025-01-16 17:32:28,672 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,688 - root - INFO - Processing packet #79
+2025-01-16 17:32:28,688 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,848 - root - INFO - Processing packet #80
+2025-01-16 17:32:28,851 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:28,851 - root - INFO - Processing packet #81
+2025-01-16 17:32:28,852 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,542 - root - INFO - Processing packet #82
+2025-01-16 17:32:29,544 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,653 - root - INFO - Processing packet #83
+2025-01-16 17:32:29,656 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,658 - root - INFO - Processing packet #84
+2025-01-16 17:32:29,661 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,661 - root - INFO - Processing packet #85
+2025-01-16 17:32:29,663 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,689 - root - INFO - Processing packet #86
+2025-01-16 17:32:29,691 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,868 - root - INFO - Processing packet #87
+2025-01-16 17:32:29,871 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,944 - root - INFO - Processing packet #88
+2025-01-16 17:32:29,947 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
+2025-01-16 17:32:29,983 - root - INFO - Processing packet #89
+2025-01-16 17:32:29,986 - root - ERROR - Error preprocessing features: Must pass 2-d input. shape=(1, 1, 15)
