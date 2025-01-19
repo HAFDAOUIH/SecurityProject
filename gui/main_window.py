@@ -1,17 +1,19 @@
+# gui/main_window.py
 import os
 import tkinter as tk
 from tkinter import ttk, scrolledtext
 
-from utils import config
+from utils.config import ApplicationConfig
+from utils.network_processor import NetworkProcessor
+from utils.packet_analyzer import PacketAnalyzer
 from .tabs.overview_tab import OverviewTab
 from .tabs.network_tab import NetworkTab
 from .tabs.process_tab import ProcessTab
 from .tabs.threats_tab import ThreatsTab
 import logging
 
-
 class MainWindow(tk.Tk):
-    def __init__(self, config):
+    def __init__(self, config: ApplicationConfig):
         super().__init__()
         self.configuration = config
         self.setup_window()
@@ -46,10 +48,25 @@ class MainWindow(tk.Tk):
         self.notebook.pack(expand=True, fill='both', padx=5, pady=5)
 
         # Create threats_tab first since others depend on it
-        self.threats_tab = ThreatsTab(self.notebook)
+        self.threats_tab = ThreatsTab(self.notebook, config=self.configuration)
 
-        # Pass threats_tab to NetworkTab
-        self.network_tab = NetworkTab(self.notebook, threats_tab=self.threats_tab)
+        # Initialize NetworkProcessor
+        network_processor = NetworkProcessor()
+
+        # Create PacketAnalyzer with proper configuration
+        packet_analyzer = PacketAnalyzer(
+            network_processor=network_processor,
+            threats_tab=self.threats_tab,
+            config=self.configuration
+        )
+
+        # Pass packet_analyzer to NetworkTab
+        self.network_tab = NetworkTab(
+            self.notebook,
+            threats_tab=self.threats_tab,
+            packet_analyzer=packet_analyzer
+        )
+
         self.overview_tab = OverviewTab(self.notebook)
         self.process_tab = ProcessTab(self.notebook)
 
@@ -72,6 +89,7 @@ class MainWindow(tk.Tk):
                 logging.StreamHandler()
             ]
         )
+
     def show_settings(self):
         settings_window = tk.Toplevel(self)
         settings_window.title("Settings")

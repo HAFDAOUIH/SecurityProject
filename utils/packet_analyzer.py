@@ -1,64 +1,142 @@
 # utils/packet_analyzer.py
-from scapy.all import sniff
+from scapy.all import IP, sniff, conf
 import threading
-import queue
 import logging
-
+from tkinter import ttk, messagebox
+from typing import Optional
+from .model_handler import ModelHandler
+from .network_processor import NetworkProcessor
 
 class PacketAnalyzer:
-    def __init__(self, network_processor, threats_tab=None, network_tab=None):
+    def __init__(self, network_processor: NetworkProcessor, threats_tab, config=None):
         self.network_processor = network_processor
         self.threats_tab = threats_tab
-        self.network_tab = network_tab
-        if not self.threats_tab:
-            logging.warning("PacketAnalyzer initialized without threats_tab")
-        self.packet_queue = queue.Queue()
-        self.is_running = False
-        self.processing_thread = None
+        self.config = config
+        self.model_handler = ModelHandler(config)
+        self.capture_thread: Optional[threading.Thread] = None
+        self.is_capturing = False
+        self.interface = None
+        self.packets_processed = 0
+        self.threats_detected = 0
+
+        logging.info("PacketAnalyzer initialized")
+
+
+        if self.threats_tab:
+            logging.info("ThreatsTab is successfully passed to PacketAnalyzer")
+        else:
+            logging.error("ThreatsTab is not initialized in PacketAnalyzer")
+
+    def set_interface(self, interface: str):
+        """Set the network interface to capture packets from"""
+        self.interface = interface
+        logging.info(f"Network interface set to: {interface}")
 
     def start_capture(self):
         """Start packet capture and analysis"""
-        self.is_running = True
-        self.processing_thread = threading.Thread(target=self._process_packets)
-        self.processing_thread.daemon = True
-        self.processing_thread.start()
+        if not self.interface:
+            raise ValueError("No network interface selected")
 
-        try:
-            sniff(prn=self._packet_callback, store=0)
-        except Exception as e:
-            logging.error(f"Error in packet capture: {str(e)}")
-            self.stop_capture()
+        if not self.is_capturing:
+            try:
+                self.is_capturing = True
+                self.capture_thread = threading.Thread(target=self._capture_packets)
+                self.capture_thread.daemon = True
+                self.capture_thread.start()
+                logging.info(f"Packet capture started on interface: {self.interface}")
+            except Exception as e:
+                logging.error(f"Failed to start packet capture: {str(e)}")
+                self.is_capturing = False
+                raise
 
     def stop_capture(self):
-        """Stop packet capture and analysis"""
-        self.is_running = False
-        if self.processing_thread:
-            self.processing_thread.join()
+        """Stop packet capture"""
+        try:
+            self.is_capturing = False
+            if self.capture_thread:
+                self.capture_thread.join(timeout=1.0)
+            logging.info("Packet capture stopped")
+        except Exception as e:
+            logging.error(f"Error stopping packet capture: {str(e)}")
 
-    def _packet_callback(self, packet):
-        """Callback function for packet capture"""
-        if self.is_running:
-            self.packet_queue.put(packet)
+    def _capture_packets(self):
+        """Capture and analyze network packets"""
+        try:
+            # Configure Scapy to use the selected interface
+            conf.iface = self.interface
 
-    def _process_packets(self):
-        while self.is_running:
-            try:
-                packet = self.packet_queue.get(timeout=1)
-                result, original_packet = self.network_processor.process_packet(packet)
+            sniff(
+                iface=self.interface,
+                prn=self._analyze_packet,
+                store=0,
+                stop_filter=lambda _: not self.is_capturing
+            )
+        except Exception as e:
+            logging.error(f"Error in packet capture: {str(e)}")
+            self.is_capturing = False
 
-                if result and self.threats_tab:
-                    try:
-                        # Display all packets, not just attacks
-                        self.threats_tab.add_threat(
-                            threat_type=f"{result['protocol'].upper()} {result['prediction']}",
-                            source=result['source'],
-                            destination=result['destination'],
-                            risk_level=result['risk_level'] if result['prediction'] == 'Attack' else 'None'
-                        )
-                    except Exception as e:
-                        logging.error(f"Error adding packet to display: {str(e)}")
+    def _analyze_packet(self, packet):
+        """Analyze a single packet"""
+        try:
+            if IP not in packet:
+                return
 
-            except queue.Empty:
-                continue
-            except Exception as e:
-                logging.error(f"Error processing packet: {str(e)}")
+            # Extract features
+            features = self.network_processor.process_packet(packet)
+
+            # Skip if feature extraction failed
+            if not features:
+                logging.warning("No features extracted from packet.")
+                return
+
+            # Update packet count
+            self.packets_processed += 1
+
+            # Preprocess features
+            preprocessed_features = self.model_handler.preprocess_packet(features)
+
+            # Make prediction
+            prediction, confidence = self.model_handler.predict(preprocessed_features)
+
+            # Determine risk level
+            risk_level = self._calculate_risk_level(prediction, confidence)
+
+            logging.info(f"Prediction: {prediction}, Confidence: {confidence}, Risk Level: {risk_level}")
+
+            # Add to threats tab only if actually suspicious
+            self.threats_detected += 1
+            self.threats_tab.add_threat(
+                threat_type=prediction,
+                source=packet[IP].src,
+                destination=packet[IP].dst,
+                risk_level=risk_level,
+                status="Detected"
+            )
+
+            # Update statistics in the Network Tab
+            if hasattr(self.threats_tab, 'update_statistics'):
+                self.threats_tab.update_statistics(self.packets_processed, self.threats_detected)
+
+        except Exception as e:
+            logging.error(f"Error analyzing packet: {str(e)}")
+            logging.exception("Full traceback:")
+
+
+    def _calculate_risk_level(self, prediction: str, confidence: float) -> str:
+        """Calculate risk level based on prediction and confidence"""
+        # If it's normal traffic, base risk on confidence inversely
+        if prediction.lower() == "normal":
+            if confidence >= 0.8:
+                return "Low"
+            elif confidence >= 0.6:
+                return "Medium"
+            else:
+                return "High"
+
+        # For attack traffic, use confidence directly
+        if confidence >= 0.8:
+            return "High"
+        elif confidence >= 0.6:
+            return "Medium"
+        else:
+            return "Low"

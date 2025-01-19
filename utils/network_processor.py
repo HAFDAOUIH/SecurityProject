@@ -1,163 +1,179 @@
 # utils/network_processor.py
+from scapy.all import IP, TCP, UDP, ICMP
 import logging
-
-import joblib
-import numpy as np
-from scapy.all import IP
-import pandas as pd
-from collections import defaultdict
-import time
-
+from typing import Dict, Any
 
 class NetworkProcessor:
-    def __init__(self, model_path='models/best_model_XGB.pkl', scaler_path='models/scaler.pkl'):
-        self.model = joblib.load(model_path)
-        self.scaler = joblib.load(scaler_path)
-        self.packet_stats = defaultdict(int)
-        self.connection_stats = defaultdict(lambda: defaultdict(int))
-        self.feature_names = [
-            'duration', 'protocol_type', 'service', 'flag', 'src_bytes',
-            'dst_bytes', 'wrong_fragment', 'hot', 'logged_in', 'num_compromised',
-            'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate'
-        ]
+    def __init__(self):
+        self.current_connections = {}
+        self.packet_count = 0
+        logging.info("NetworkProcessor initialized")
 
-        # Define mappings for categorical features
-        self.protocol_map = {'tcp': 0, 'udp': 1, 'icmp': 2}
-        self.service_map = self._create_service_map()
-        self.flag_map = {'SF': 0, 'S0': 1, 'REJ': 2, 'RSTR': 3, 'RSTO': 4,
-                         'SH': 5, 'S1': 6, 'S2': 7, 'RSTOS0': 8, 'S3': 9,
-                         'OTH': 10}
+    def process_packet(self, packet) -> Dict[str, Any]:
+        """Process a network packet and extract relevant features"""
+        try:
+            if IP not in packet:
+                return None
 
-    def _create_service_map(self):
-        # Common network services mapping
-        services = ['http', 'smtp', 'domain', 'ftp', 'ssh', 'telnet', 'pop3',
-                    'imap', 'ssl', 'dns', 'other']
-        return {service: idx for idx, service in enumerate(services)}
+            self.packet_count += 1
+            features = {}
 
-    def _extract_features(self, packet):
-        if not packet.haslayer(IP):
+            # Extract IP features
+            ip_features = self._extract_ip_features(packet[IP])
+            features.update(ip_features)
+
+            # Extract protocol-specific features
+            if TCP in packet:
+                features.update(self._extract_tcp_features(packet[TCP]))
+            elif UDP in packet:
+                features.update(self._extract_udp_features(packet[UDP]))
+            elif ICMP in packet:
+                features.update(self._extract_icmp_features(packet[ICMP]))
+            else:
+                features.update({
+                    'service': 'other',
+                    'flag': 'OTH'
+                })
+
+            # Add connection-based features
+            conn_key = self._get_connection_key(packet)
+            features.update(self._get_connection_features(conn_key))
+
+            return self._normalize_features(features)
+
+        except Exception as e:
+            logging.error(f"Error processing packet: {str(e)}")
             return None
 
-        # Extract basic packet information
-        src_ip = packet[IP].src
-        dst_ip = packet[IP].dst
-        protocol = packet[IP].proto
-        length = len(packet)
-
-        # Update statistics
-        self.packet_stats['total'] += 1
-        conn_key = f"{src_ip}:{dst_ip}"
-        self.connection_stats[conn_key]['count'] += 1
-        self.connection_stats[conn_key]['bytes'] += length
-
-        # Calculate features
-        duration = time.time() - self.connection_stats[conn_key].get('start_time', time.time())
-        if 'start_time' not in self.connection_stats[conn_key]:
-            self.connection_stats[conn_key]['start_time'] = time.time()
-
-        protocol_type = self.protocol_map.get(self._get_protocol_name(protocol), 2)
-        service = self.service_map.get(self._get_service_name(packet), 10)
-        flag = self.flag_map.get(self._get_tcp_flag(packet), 10)
-
-        # Create feature vector
-        features = {
-            'duration': duration,
-            'protocol_type': protocol_type,
-            'service': service,
-            'flag': flag,
-            'src_bytes': self.connection_stats[conn_key]['bytes'],
-            'dst_bytes': length,
-            'wrong_fragment': int(bool(packet.getfieldval('flags') & 0x1)),
-            'hot': 0,  # Placeholder - could be implemented based on specific patterns
-            'logged_in': 0,  # Placeholder - could be implemented based on session tracking
-            'num_compromised': 0,  # Placeholder - could be implemented based on threat intel
-            'count': self.connection_stats[conn_key]['count'],
-            'srv_count': sum(1 for k in self.connection_stats if k.startswith(src_ip)),
-            'serror_rate': self._calculate_error_rate(src_ip),
-            'srv_serror_rate': self._calculate_service_error_rate(src_ip),
-            'rerror_rate': self._calculate_reject_rate(src_ip)
+    def _extract_ip_features(self, ip) -> Dict[str, Any]:
+        """Extract features from IP layer"""
+        return {
+            'protocol_type': ip.proto,
+            'src_bytes': len(ip),
+            'dst_bytes': 0,  # Will be updated with response
+            'land': 1 if ip.src == ip.dst else 0,
+            'wrong_fragment': ip.frag,
+            'urgent': 0  # Will be updated for TCP
         }
 
-
-
-        return features
-
-    def _get_protocol_name(self, protocol):
-        protocol_names = {1: 'icmp', 6: 'tcp', 17: 'udp'}
-        return protocol_names.get(protocol, 'other')
-
-    def _get_service_name(self, packet):
-        common_ports = {
-            80: 'http', 443: 'ssl', 21: 'ftp', 22: 'ssh',
-            23: 'telnet', 25: 'smtp', 53: 'domain'
-        }
-        try:
-            dport = packet.dport
-            return common_ports.get(dport, 'other')
-        except:
-            return 'other'
-
-    def _get_tcp_flag(self, packet):
-        try:
-            if packet.haslayer('TCP'):
-                flags = packet['TCP'].flags
-                if flags & 0x02 and flags & 0x10:  # SYN-ACK
-                    return 'SF'
-                elif flags & 0x02:  # SYN
-                    return 'S0'
-                elif flags & 0x14:  # RST-ACK
-                    return 'RSTR'
-            return 'OTH'
-        except:
-            return 'OTH'
-
-    def _calculate_error_rate(self, ip):
-        total = sum(1 for k in self.connection_stats if k.startswith(ip))
-        errors = sum(1 for k in self.connection_stats if k.startswith(ip) and
-                     self.connection_stats[k].get('errors', 0) > 0)
-        return errors / total if total > 0 else 0
-
-    def _calculate_service_error_rate(self, ip):
-        return self._calculate_error_rate(ip)  # Simplified implementation
-
-    def _calculate_reject_rate(self, ip):
-        return self._calculate_error_rate(ip)  # Simplified implementation
-
-    def process_packet(self, packet):
-        features = self._extract_features(packet)
-        if features is None:
-            return None, None
-
-        # Convert features to DataFrame
-        df = pd.DataFrame([features])
-
-        # Scale features
-        scaled_features = self.scaler.transform(df)
-
-        # Make prediction
-        prediction = self.model.predict(scaled_features)[0]
-        prediction_proba = self.model.predict_proba(scaled_features)[0]
-
-        # Determine risk level based on probability
-        risk_level = self._calculate_risk_level(prediction_proba[1]) if prediction == 1 else "None"
-
-        result = {
-            'prediction': 'Attack' if prediction == 1 else 'Normal',
-            'confidence': prediction_proba.max(),
-            'risk_level': risk_level,
-            'source': packet[IP].src,
-            'destination': packet[IP].dst,
-            'protocol': self._get_protocol_name(packet[IP].proto)
+    def _extract_tcp_features(self, tcp) -> Dict[str, Any]:
+        """Extract features from TCP layer"""
+        flags = str(tcp.flags)
+        return {
+            'service': tcp.dport,
+            'flag': self._get_tcp_flag(flags),
+            'urgent': tcp.urgptr if tcp.urgptr else 0
         }
 
-        return result, packet
-    def _calculate_risk_level(self, attack_probability):
-        # Increase the thresholds to reduce false positives
-        if attack_probability > 0.95:  # More strict threshold
-            return "Critical"
-        elif attack_probability > 0.85:
-            return "High"
-        elif attack_probability > 0.75:
-            return "Medium"
+    def _extract_udp_features(self, udp) -> Dict[str, Any]:
+        """Extract features from UDP layer"""
+        return {
+            'service': udp.dport,
+            'flag': 'UDP'
+        }
+
+    def _extract_icmp_features(self, icmp) -> Dict[str, Any]:
+        """Extract features from ICMP layer"""
+        return {
+            'service': 'icmp',
+            'flag': 'ICMP'
+        }
+
+    def _get_connection_key(self, packet) -> str:
+        """Generate unique connection key"""
+        ip = packet[IP]
+        if TCP in packet:
+            proto = 'TCP'
+            sport = packet[TCP].sport
+            dport = packet[TCP].dport
+        elif UDP in packet:
+            proto = 'UDP'
+            sport = packet[UDP].sport
+            dport = packet[UDP].dport
         else:
-            return "Low"
+            proto = 'ICMP'
+            sport = 0
+            dport = 0
+
+        return f"{ip.src}:{sport}-{ip.dst}:{dport}-{proto}"
+
+    def _get_connection_features(self, conn_key: str) -> Dict[str, Any]:
+        """Get connection-based features"""
+        conn = self.current_connections.get(conn_key, {
+            'count': 0,
+            'srv_count': 0,
+            'serror_rate': 0,
+            'srv_serror_rate': 0,
+
+        })
+
+        conn['count'] += 1
+        self.current_connections[conn_key] = conn
+
+        return conn
+
+    def _normalize_features(self, features: Dict[str, Any]) -> Dict[str, Any]:
+        """Normalize features to match training data format"""
+        # Start with default values for all base features
+        default_features = {
+            'duration': 0,
+            'protocol_type': 0,
+            'service': 0,
+            'flag': 0,
+            'src_bytes': 0,
+            'dst_bytes': 0,
+            'land': 0,
+            'wrong_fragment': 0,
+            'urgent': 0,
+            'hot': 0,
+            'num_failed_logins': 0,
+            'logged_in': 0,
+            'num_compromised': 0,
+            'root_shell': 0,
+            'su_attempted': 0,
+            'num_root': 0,
+            'num_file_creations': 0,
+            'num_shells': 0,
+            'num_access_files': 0,
+            'num_outbound_cmds': 0,
+            'is_host_login': 0,
+            'is_guest_login': 0,
+            'count': 0,
+            'srv_count': 0,
+            'serror_rate': 0,
+            'srv_serror_rate': 0,
+            'rerror_rate': 0,
+            'srv_rerror_rate': 0,
+            'same_srv_rate': 0,
+            'diff_srv_rate': 0,
+            'srv_diff_host_rate': 0,
+            'dst_host_count': 0,
+            'dst_host_srv_count': 0,
+            'dst_host_same_srv_rate': 0,
+            'dst_host_diff_srv_rate': 0,
+            'dst_host_same_src_port_rate': 0,
+            'dst_host_srv_diff_host_rate': 0,
+            'dst_host_serror_rate': 0,
+            'dst_host_srv_serror_rate': 0,
+            'dst_host_rerror_rate': 0,
+            'dst_host_srv_rerror_rate': 0,
+            # Add frequency encoding features
+            'protocol_type_freq': 0,
+            'service_freq': 0,
+            'flag_freq': 0
+        }
+
+        return {**default_features, **features}
+
+    def _get_tcp_flag(self, flags: str) -> str:
+        """Convert TCP flags to categorical value"""
+        flag_map = {
+            'S': 'SYN',
+            'SA': 'SYNACK',
+            'A': 'ACK',
+            'FA': 'FINACK',
+            'R': 'RST',
+            'P': 'PUSH',
+            'F': 'FIN'
+        }
+        return flag_map.get(flags, 'OTH')

@@ -79,6 +79,8 @@ def main():
             app = MainWindow(config)
             logging.info("Main window created successfully")
 
+
+
             # Start GUI main loop
             logging.info("Starting main event loop...")
             app.mainloop()

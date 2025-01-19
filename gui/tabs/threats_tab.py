@@ -145,34 +145,76 @@ class ThreatsTab(ttk.Frame):
                 side="left", padx=5
             )
 
-    def add_threat(self, threat_type, source, destination, risk_level, timestamp=None, status="Detected"):
-        """Add a new threat/packet to the treeview"""
-        if timestamp is None:
-            timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-        elif isinstance(timestamp, (int, float)):
-            timestamp = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+    def add_threat(self, threat_type, source, destination, risk_level, status="Detected"):
+        """Add a new threat to the treeview"""
+        try:
+            timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        item_id = self.tree.insert("", "end", values=(
-            timestamp,
-            threat_type,
-            source,
-            destination,
-            risk_level,
-            status
-        ))
+            # Add the threat to the treeview
+            item_id = self.tree.insert("", "end", values=(
+                timestamp,
+                threat_type,
+                source,
+                destination,
+                risk_level,
+                status
+            ))
 
-        # Add visual distinction between normal and attack traffic
-        if "NORMAL" in threat_type.upper():
-            self.tree.item(item_id, tags=('normal',))
-        else:
-            self.tree.item(item_id, tags=('attack',))
+            # Visual distinction based on risk level
+            if risk_level.upper() == "HIGH":
+                self.tree.item(item_id, tags=('high_risk',))
+            elif risk_level.upper() == "MEDIUM":
+                self.tree.item(item_id, tags=('medium_risk',))
+            else:
+                self.tree.item(item_id, tags=('low_risk',))
 
-        # Configure tag colors
-        self.tree.tag_configure('normal', foreground='green')
-        self.tree.tag_configure('attack', foreground='red')
+            self.tree.tag_configure('high_risk', foreground='red')
+            self.tree.tag_configure('medium_risk', foreground='orange')
+            self.tree.tag_configure('low_risk', foreground='green')
 
-        self.threats.append((timestamp, threat_type, source, destination, risk_level, status))
+            # Scroll to the newly added threat
+            self.tree.see(item_id)
 
+            logging.info(f"Threat added: {threat_type}, Source: {source}, Destination: {destination}, Risk: {risk_level}")
+
+        except Exception as e:
+            logging.error(f"Error adding threat: {str(e)}")
+
+
+
+    def _add_threat_to_tree(self, timestamp, threat_type, source, destination, risk_level, status):
+        """Helper method to add threat to tree in main thread"""
+        try:
+            item_id = self.tree.insert("", "end", values=(
+                timestamp,
+                threat_type,
+                source,
+                destination,
+                risk_level,
+                status
+            ))
+
+            # Add visual distinction based on risk level
+            if risk_level.upper() == "HIGH":
+                self.tree.item(item_id, tags=('high_risk',))
+            elif risk_level.upper() == "MEDIUM":
+                self.tree.item(item_id, tags=('medium_risk',))
+            else:
+                self.tree.item(item_id, tags=('low_risk',))
+
+            # Configure tag colors
+            self.tree.tag_configure('high_risk', foreground='red')
+            self.tree.tag_configure('medium_risk', foreground='orange')
+            self.tree.tag_configure('low_risk', foreground='green')
+
+            # Store threat in list
+            self.threats.append((timestamp, threat_type, source, destination, risk_level, status))
+
+            # Auto-scroll to the new item
+            self.tree.see(item_id)
+
+        except Exception as e:
+            logging.error(f"Error in _add_threat_to_tree: {str(e)}")
     def block_threat(self):
         """Block the selected threat"""
         selected = self.tree.selection()
